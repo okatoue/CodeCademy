@@ -1,0 +1,19 @@
+// this represents the constant value of kelvin
+const kelvin = 293;
+
+// this represents the value of celsius when compared to kelvin
+var celsius = kelvin - 273;
+
+// this represents the value of fahrenheit compared to celsius
+var fahrenheit = celsius * (9/5) + 32;
+
+// when converting celsius to fahrenheit, we get a decimal. this line of code rounds down
+fahrenheit = Math.floor(fahrenheit);
+
+console.log(`The temperature is ${fahrenheit} degrees Fahrenheit.`);
+
+var newtonScale = celsius * (33/100);
+
+newtonScale = Math.floor(newtonScale);
+
+console.log(`The temperature is ${newtonScale} degrees Newton.`);
