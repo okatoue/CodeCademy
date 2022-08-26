@@ -1,0 +1,67 @@
+const getUserChoice = userInput => userInput.toLowerCase() == 'rock' || userInput.toLowerCase() == 'scissors' || userInput.toLowerCase() == 'paper' ? userInput : console.log(`Error, ${userInput} is not a valid option`);
+// This function can also be written like this, i wrote it in a diffrent way so i can try multiple diffrent methods
+
+/*
+const getUserChoice = userInput => {
+  let choice = userInput.toLowerCase();
+  if (choice === 'rock' || choice === 'scissors' || choice === 'paper') {
+    return userInput.toLowerCase();
+  }
+  else {
+    console.log(`Error, ${userInput} is not a valid option`)
+  }
+}
+*/
+
+function getComputerChoice() {
+  let randomNum = Math.floor(Math.random() * 3);
+  let compChoice = '';
+  switch (randomNum) {
+    case (0):
+      compChoice = 'rock';
+      break;
+    case (1):
+      compChoice = 'scissors';
+      break;
+    case (2):
+      compChoice = 'paper';
+      break;
+  }
+  return compChoice
+}
+
+const determineWinner = (userChoice, computerChoice) =>{ 
+  if (userChoice === computerChoice) {
+    return `Its a Tie!`
+  } else {
+    if (userChoice === 'rock') {
+      if (computerChoice === 'paper') {
+        return `You lost!`
+      } else {
+        return 'You Won!'
+      }
+    } else if (userChoice === 'paper') {
+      if (computerChoice === 'scissors') {
+        return 'You lost!'
+      } else {
+        return 'You Won!'
+      }
+    } else {
+      if (computerChoice === 'rock') {
+        return 'You lost!'
+      } else {
+        return 'You Won!'
+      }
+    }
+  }
+}
+
+function playGame(){
+  let userChoice = getUserChoice('rock');
+  let computerChoice = getComputerChoice();
+  console.log(userChoice);
+  console.log(computerChoice);
+  console.log(determineWinner(userChoice, computerChoice));
+}
+
+playGame()
