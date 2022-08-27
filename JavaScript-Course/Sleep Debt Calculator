@@ -32,3 +32,16 @@ function getIdealSleepHours() {
   let idealHours = 8 * 7;
   return idealHours;
 }
+
+function calculateSleepDebt() {
+  let debt = getActualSleepHours() - getIdealSleepHours();
+  if (debt === getIdealSleepHours()) {
+    console.log('Your getting the perfect amount of sleep')
+  } else if (debt > getIdealSleepHours()){
+    console.log(`Your getting ${debt} hours extra sleep!`)
+  } else {
+    console.log(`Your ${Math.abs(debt)} below your ideal hours! You need more sleep!`)
+  }
+}  
+
+calculateSleepDebt()
